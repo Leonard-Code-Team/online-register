@@ -4,8 +4,6 @@ from deta import Deta
 import pandas as pd
 import streamlit_authenticator as stauth
 
-
-
 # List of Employees
 
 employees = [
