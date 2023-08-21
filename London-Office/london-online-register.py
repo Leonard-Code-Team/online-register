@@ -5,12 +5,12 @@ import pandas as pd
 from streamlit_authenticator import Authenticate
 
 # Login authentication
-authenticator = Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized']
+authenticator = stauth.Authenticate(
+    dict(st.secrets['credentials']),
+    st.secrets['cookie']['name'],
+    st.secrets['cookie']['key'],
+    st.secrets['cookie']['expiry_days'],
+    st.secrets['preauthorized']
 )
 
 name, authentication_status, username = authenticator.login('Login', 'main')
