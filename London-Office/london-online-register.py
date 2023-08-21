@@ -6,7 +6,7 @@ from streamlit_authenticator import Authenticate
 
 # Login authentication
 authenticator = stauth.Authenticate(
-    dict(st.secrets['credentials']),
+    dict(st.secrets['credentials']['usernames']),
     st.secrets['cookie']['name'],
     st.secrets['cookie']['key'],
     st.secrets['cookie']['expiry_days'],
