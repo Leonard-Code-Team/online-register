@@ -6,28 +6,8 @@ import streamlit_authenticator as stauth
 
 # List of Employees
 
-employees = [
-    'Cho Seonghwan',
-    'Jack Malcom',
-    'Hannah Middleton',
-    'Ron Hyunseung Jeong',
-    'Guy Davies',
-    'Sam Meier',
-    'Soo-in Oh',
-    'Hin Sim',
-    'Seunghun Lee',
-    'Esme Hallam',
-    'Nicole Billington',
-    'Monya Riachi',
-    'Anastasiia, Pshenychna',
-    'Margaret Reith',
-    'Soyoung Kang',
-    'Ashni Patel',
-    'Selene Santorsola',
-    'Matt Sandhu',
-    'Alfie Roden',
-    'Sihyun Kim'
-]
+employees = st.secrets['london_employees']['employees']
+
 
 sorted_employees = sorted(employees)
 # Webpage
@@ -81,7 +61,8 @@ if authentication_status:
 
     # store employee signed-in details
     # Connect to Deta Base with your Data Key
-    deta = Deta("a0mamnflh1f_FqcPC51HCCEfR2XjqVorXjMSqqFHqUFp")
+    api_key = st.secrets['deta']['api_key']
+    deta = Deta(api_key)
 
     # Create a new database "example-db"
     # If you need a new database, just use another name.
