@@ -2,11 +2,11 @@ import streamlit as st
 from datetime import datetime, timedelta
 from deta import Deta
 import pandas as pd
-from streamlit_authenticator import Authenticate
+import streamlit_authenticator as stauth
 
 # Login authentication
 authenticator = stauth.Authenticate(
-    dict(st.secrets['credentials']['usernames']),
+    dict(st.secrets['credentials']),
     st.secrets['cookie']['name'],
     st.secrets['cookie']['key'],
     st.secrets['cookie']['expiry_days'],
