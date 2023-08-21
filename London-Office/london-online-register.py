@@ -4,16 +4,7 @@ from deta import Deta
 import pandas as pd
 import streamlit_authenticator as stauth
 
-# Login authentication
-authenticator = stauth.Authenticate(
-    dict(st.secrets['credentials']),
-    st.secrets['cookie']['name'],
-    st.secrets['cookie']['key'],
-    st.secrets['cookie']['expiry_days'],
-    st.secrets['preauthorized']
-)
 
-name, authentication_status, username = authenticator.login('Login', 'main')
 
 # List of Employees
 
@@ -56,6 +47,16 @@ with col2:
     today = "Date: {}".format(date)
     st.subheader(today)
 
+# Login authentication
+authenticator = stauth.Authenticate(
+    dict(st.secrets['credentials']),
+    st.secrets['cookie']['name'],
+    st.secrets['cookie']['key'],
+    st.secrets['cookie']['expiry_days'],
+    st.secrets['preauthorized']
+)
+
+name, authentication_status, username = authenticator.login('Login', 'main')
 
 #print(sorted(employees))
 
