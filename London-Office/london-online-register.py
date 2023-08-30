@@ -12,7 +12,7 @@ employees = st.secrets['london_employees']['employees']
 sorted_employees = sorted(employees)
 # Webpage
 
-st.title('<span style='color:green'>Leonard Design Architects </span>')
+st.title(':green[Leonard Design Architects]')
 
 col1, col2 = st.columns(2)
 
