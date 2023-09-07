@@ -42,7 +42,7 @@ name, authentication_status, username = authenticator.login('Login', 'main')
 # Store the initial value of widgets in session state
 if "visibility" not in st.session_state:
     st.session_state.visibility = "visible"
-    st.session_state.disabled = False
+    st.session_state.disabled = True
 
 if authentication_status:
     authenticator.logout('Logout', 'main')
@@ -76,7 +76,7 @@ if authentication_status:
     if employee != "select...":
         db.put({'Date': str(date)}, employee)
 
-    if visitor != "Please enter your full name / organisation..." or visitor != "" or visitor is not None:
+    if visitor != "Please enter your full name / organisation..." or visitor is True:
         db.put({'Date': str(date)}, visitor)
 
 
