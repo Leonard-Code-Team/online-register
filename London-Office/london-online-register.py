@@ -76,7 +76,7 @@ if authentication_status:
     if employee != "select...":
         db.put({'Date': str(date)}, employee)
 
-    if visitor != "Please enter your full name / organisation..." or "":
+    if visitor != "Please enter your full name / organisation..." or visitor != "":
         db.put({'Date': str(date)}, visitor)
 
 
