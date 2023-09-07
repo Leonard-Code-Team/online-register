@@ -10,6 +10,7 @@ employees = st.secrets['london_employees']['employees']
 
 
 sorted_employees = sorted(employees)
+
 # Webpage
 
 st.title(':green[Leonard Design Architects]')
@@ -75,7 +76,7 @@ if authentication_status:
     if employee != "select...":
         db.put({'Date': str(date)}, employee)
 
-    if visitor != "Please enter your full name / organisation...":
+    if visitor != "Please enter your full name / organisation..." or "":
         db.put({'Date': str(date)}, visitor)
 
 
